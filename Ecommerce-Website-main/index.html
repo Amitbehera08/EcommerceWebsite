@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Modern E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/logo.png" alt="ShopHub Logo" class="logo-img">
+                <span>ShopHub</span>
+            </div>
+            
+            <div class="nav-search">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Search products..."
+                >
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <button id="cartBtn" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to ShopHub</h1>
+            <p class="hero-subtitle">Discover amazing products at unbeatable prices</p>
+            <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Shop Now
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="img/hero4.png" alt="Hero Banner">
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="featured-products">
+                <div class="product-card featured-card">
+                    <div class="product-image">
+                        <img src="img/products/f1.jpg" alt="Men's Fashion">
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Men's T-Shirt</h3>
+                        <p class="category">Men's Fashion</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                            <span>(128)</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">$19.99</span>
+                            <span class="original-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(1, 'Men\'s T-Shirt', 19.99, 'img/products/f1.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card featured-card">
+                    <div class="product-image">
+                        <img src="img/products/f2.jpg" alt="Women's Dress">
+                        <span class="discount-badge">-15%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Evening Dress</h3>
+                        <p class="category">Women's Fashion</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(256)</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">$34.99</span>
+                            <span class="original-price">$39.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(2, 'Evening Dress', 34.99, 'img/products/f2.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card featured-card">
+                    <div class="product-image">
+                        <img src="img/products/f3.jpg" alt="Shoes">
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sport Shoes</h3>
+                        <p class="category">Footwear</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(89)</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">$44.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(3, 'Sport Shoes', 44.99, 'img/products/f3.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card featured-card">
+                    <div class="product-image">
+                        <img src="img/products/f4.jpg" alt="Handbag">
+                        <span class="discount-badge">-10%</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Bag</h3>
+                        <p class="category">Accessories</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half"></i>
+                            <span>(342)</span>
+                        </div>
+                        <div class="price-section">
+                            <span class="price">$79.99</span>
+                            <span class="original-price">$89.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(4, 'Designer Bag', 79.99, 'img/products/f4.jpg')">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="all">All Products</button>
+                <button class="filter-btn" data-filter="mens">Men's Fashion</button>
+                <button class="filter-btn" data-filter="womens">Women's Fashion</button>
+                <button class="filter-btn" data-filter="accessories">Accessories</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">All Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About ShopHub</h2>
+                    <p>We are dedicated to providing you with the highest quality products at the best prices. Our mission is to make online shopping convenient, enjoyable, and accessible to everyone.</p>
+                    <ul class="about-benefits">
+                        <li><i class="fas fa-check"></i> Free Shipping on Orders Over $50</li>
+                        <li><i class="fas fa-check"></i> 30-Day Money Back Guarantee</li>
+                        <li><i class="fas fa-check"></i> 24/7 Customer Support</li>
+                        <li><i class="fas fa-check"></i> Secure Payment Gateway</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="img/about/about1.jpg" alt="About Us" onerror="this.src='https://via.placeholder.com/400x400?text=About+Us'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get exclusive offers and updates delivered to your inbox</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" id="emailInput">
+                <button onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>ShopHub is your one-stop destination for quality products and exceptional customer service.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                    <li><a href="#shipping">Shipping Info</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShopHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <p style="text-align: center; color: #666;">
+                <i class="fas fa-shopping-cart" style="font-size: 2em; margin-bottom: 10px; display: block;"></i>
+                View your cart on the dedicated cart page for full management.
+            </p>
+            <a href="cart.html" class="hero-btn" style="display: block; text-align: center; margin-top: 20px;">
+                Go to Cart Page
+            </a>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
